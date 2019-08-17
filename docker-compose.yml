@@ -2,20 +2,32 @@ version: '3'
 
 services:
   flask:
-    build: .
-    volumes:
-      - ./src:/usr/src
-    ports:
-      - "5000:5000"
+    build: ./flask
+    container_name: flask
+    volumes: 
+      - ./flask:/src
+    expose: 
+      - "5000"
     links:
       - redis
     tty: true
+    restart: always
+  
   redis:
     image: redis:alpine
-    ports:
-      - "6379"
-    volumes:
+    container_name: redis
+    ports: 
+      - "6379:6379"
+    volumes: 
       - ./data/redis:/data
     command: >
       sh -c "redis-server --appendonly yes"
+  
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports: 
+      - "5000:80"
+
     
