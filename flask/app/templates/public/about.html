@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "public/templates/Bootstrap.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    {% if title %}
-        <title>Flask Page - {{ title }}</title>
-    {% else %}
-        <title>Flask Page</title>
-    {% endif %}
-</head>
+{% block title %}
 
-<body>
-    <h1>First test on webserver with flask.</h1>
-</body>
+{% if title %}
+    Flask Page - {{ title }}
+{% else %}
+    Flask Page
+{% endif %}
 
-</html>
+{% endblock title %}
+
+{% block main %}
+<h1>First test on webserver with flask</h1>
+{% endblock main %}
