@@ -1,5 +1,6 @@
 from app import app
+from flask import render_template
 
 @app.route('/about')
 def about():
-    return "<h1>First test on webserver with flask</h1>."
+    return render_template("public/about.html")

@@ -6,4 +6,4 @@ redis = Redis(host='redis', port=6379)
 
 @app.route('/')
 def hello():
-    return render_template("public/index.html", hits=redis.incr('hits'))
+    return render_template("public/index.html", hits=10)
