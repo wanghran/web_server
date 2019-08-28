@@ -3,8 +3,8 @@ from redis import Redis
 from flask import render_template
 import json
 
-redis = Redis(host='localhost', port=6379)
-# redis = Redis(host='redis', port=6379)
+# redis = Redis(host='localhost', port=6379)
+redis = Redis(host='redis', port=6379)
 
 @app.route('/')
 def hello():
