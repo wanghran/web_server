@@ -1,7 +1,5 @@
-from redis import Redis
+from app.hello import redis
 import json
-
-redis = Redis()
 
 users = {
     "mitsuhiko": {

@@ -1,6 +1,5 @@
 from app import app
 from flask import render_template, request, redirect, flash, url_for
-import sys
 
 # @app.route('/signup', methods=["GET", "POST"])
 # def signup():
