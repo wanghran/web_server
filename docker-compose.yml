@@ -10,6 +10,7 @@ services:
       - "5000"
     links:
       - redis
+      - postgreSQL
     tty: true
     restart: always
   
@@ -22,7 +23,21 @@ services:
       - ./data/redis:/data
     command: >
       sh -c "redis-server --appendonly yes"
+    restart: always
   
+  postgreSQL:
+    image: postgres:alpine
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/PostgreSQL:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=test
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+    restart: always
+
   nginx:
     build: ./nginx
     container_name: nginx
