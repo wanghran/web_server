@@ -8,7 +8,7 @@ rq==1.1.0
 uWSGI==2.0.18
 Werkzeug==0.16.0
 WTForm==1.0
-WTForms==2.2.1
+WTForms==2.3.0
 Flask-WTF==0.14.2
 uwsgitop==0.11
 SQLAlchemy==1.3.10
